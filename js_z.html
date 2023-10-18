@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(135, 186, 210);
+        }
+        h1{
+            color:black;
+        }
+        fieldset {
+            color:black;
+            margin: 20px;
+        }
+        legend { 
+                display: block;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 3px solid green;
+                background-color:tomato;
+                color:white;
+        }
+        fieldset {
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Практическая работа №14</h1>
+    <p>Мажитов Фархат</p>
+    <p>По2210к</p>
+    <fieldset>
+        <legend>Задание 1</legend>
+        <p>Напишите функцию, которая принимает 2 числа и возвращает 1, если первое
+            число больше, чем второе; -1, если первое число меньше, чем второе, и 0, если числа
+            равны.</p>
+        <button onclick="compareNumbers()">Нажми меня</button>
+    </fieldset>
+    <fieldset>
+        <legend>Задание 2</legend>
+        <p>Напишите функцию, которая принимает цвет фона, цвет текста, строку с
+            текстом и выводит методом write()абзац с соответствующими стилями. Например,
+            функция myParagraph("red", "white", "Lorem ipsum sit amet") выведет абзац с
+            текстом "Lorem ipsum sit amet" белого цвета на красном фоне.</p>
+        <button onclick="myParagraph()">Нажми меня</button>
+    </fieldset>
+    <fieldset>
+        <legend>Задание 3</legend>
+        <p>Напишите функцию, которая принимает 2 параметра: длину и ширину
+            прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то
+            функция вычисляет площадь квадрата.</p>
+        <button onclick="calculateArea()">Нажми меня</button>
+    </fieldset>
+    <fieldset>
+        <legend>Задание 4</legend>
+        <p>Написать функцию, получающую на вход два числа. Если оба числа чётные -
+            функция возвращает их произведение. Если оба числа нечётные - функция возвращает
+            их сумму. Если одно из чисел чётное, а второе нечётное - функция возвращает это
+            нечётное число.</p>
+        <button onclick="performOperations()">Нажми меня</button>
+    </fieldset>
+    <script>
+        // Задача 1
+        function compareNumbers() {
+            let num1 = prompt("Введите первое число:");
+            let num2 = prompt("Введите второе число:");
+
+            if (num1 > num2) {
+                alert(1);
+            } else if (num1 < num2) {
+                alert(-1);
+            } else {
+                alert(0);
+            }
+        }
+
+        // Задача 2
+        function myParagraph() {
+            let bgColor = prompt("Введите bgColor:");
+            let textColor = prompt("Введите textColor:");
+            let text = prompt("Введите text:");
+            document.write('<p style="background-color:' + bgColor + '; color:' + textColor + ';">' + text + '</p>');
+        }
+        // Задача 3
+        function calculateArea() {
+            let length = prompt("Введите длину:");
+            let width = prompt("Введите ширину:");
+            if (isNaN(width)) {
+                alert(length * length);
+            } else {
+                alert(length * width);
+            }
+        }
+
+        // Задача 4
+        function performOperations() {
+            let num1 = prompt("Введите первое число:");
+            let num2 = prompt("Введите второе число:");
+            if (num1 % 2 === 0 && num2 % 2 === 0) {
+                alert(num1 * num2);
+            } else if (num1 % 2 !== 0 && num2 % 2 !== 0) {
+                alert(Number(num1) + Number(num2));
+            } else {
+                if (num1 % 2 !== 0) {
+                    alert(num1); 
+                } else {
+                    alert(num2);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
